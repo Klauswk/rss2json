@@ -1,0 +1,26 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>RSS2JSON</title>
+    <meta name="description" content="Convert rss or atom content to json">
+    <meta name="author" content="Klaus Klein">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+
+<body ng-app="rss2json">
+    <div class="jumbotron" ng-controller="AppController as app">
+        <h4>RSS/ATOM to JSON</h4>
+        <input class="form-control" type="text" placeholder="Type the rss/atom endpoint" ng-model="app.rssEndpoint">
+        <input class="btn btn-default" type="button" value="Submit" ng-click="app.getResult(app.rssEndpoint)">
+        <textarea ng-show="app.hasResult" class="form-control" rows="5">{{app.result}}</textarea>
+        <input ng-show="app.hasResult" class="btn btn-default" type="button" value="Clear" ng-click="app.clearResult()">
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+
+</html>
